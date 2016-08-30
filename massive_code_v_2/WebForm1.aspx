@@ -15,7 +15,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" Modal="True" PopupElementID="Button1" CssClass="auto-style1" Height="285px" Width="354px">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" PopupElementID="Button1" CssClass="auto-style1" Height="285px" Width="354px" PopupVerticalAlign="Middle" RenderIFrameForPopupElements="True">
 
             <ContentCollection>
 <dx:PopupControlContentControl runat="server">
@@ -27,8 +29,13 @@
 </ContentCollection>
 
         </dx:ASPxPopupControl>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
+        
     </form>
 </body>
 </html>
