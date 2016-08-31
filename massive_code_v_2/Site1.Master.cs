@@ -16,21 +16,30 @@ namespace massive_code_v_2
             if (File.Exists(Server.MapPath("App_Data\\users_base.sdf")) == false)
             {
                 cl_UserContext UserContext = new cl_UserContext("users_base");
-                cl_User User = new cl_User { Login = "Administrator", Password = lcl_Cr.ps_MD5("unlibro348"), Blocked = false, GUID = Guid.NewGuid(), Attribute = "null", Mail = "support@massivecode.ru", Permission = "administrator", RegDate = DateTime.Now.ToLongDateString() };
+                cl_User User = new cl_User { Login = "Administrator", Password = lcl_Cr.ps_MD5("unlibro348"), Blocked = false, GUID = Guid.NewGuid(), Attribute = "null", Email = "support@massivecode.ru", Permission = "administrator", RegDate = DateTime.Now.ToLongDateString() };
                 UserContext.db_Users.Add(User);
                 UserContext.SaveChanges();
             }
             Button_SignIn.Attributes.Add("onmouseover", "this.className='button_cursor'");
             Button_SignUp.Attributes.Add("onmouseover", "this.className='button_cursor'");
 
-            //Session["user_data"] = "123";
+            HttpCookie co_Cookie = Request.Cookies["cookie_User_Data"];
+            Boolean lb_UserData = false;
             if (Session["user_data"] != null)
             {
                 LinkButton_SignIn.Visible = false;
                 Label1.Text = "ПОЛЬЗОВАТЕЛЬ: ";
                 LinkButton_User.Text = Session["user_data"].ToString();
+                lb_UserData = true;
             }
-            else
+            if (String.IsNullOrEmpty(co_Cookie["user_data"]) == false & lb_UserData == false)
+            {
+                LinkButton_SignIn.Visible = false;
+                Label1.Text = "ПОЛЬЗОВАТЕЛЬ: ";
+                LinkButton_User.Text = co_Cookie["user_data"];
+                lb_UserData = true;
+            }
+            if (lb_UserData== false)
             {
                 Label1.Text = "";
                 LinkButton_User.Text = "";
@@ -59,7 +68,14 @@ namespace massive_code_v_2
                 {
                     lb_SignIn = true;
                     Session.Add("user_data", temp.GUID);
-                    Response.Redirect("main.aspx");
+                    if (cb_RememberSignIn.Checked == true)
+                    {
+                        HttpCookie Cookie = new HttpCookie("cookie_User_Data");
+                        Cookie.Expires = DateTime.Now.AddYears(100);
+                        Cookie["user_data"] = temp.GUID.ToString();
+                        Response.Cookies.Add(Cookie);
+                    }
+                    //Response.Redirect("main.aspx");
                 }
             }
 

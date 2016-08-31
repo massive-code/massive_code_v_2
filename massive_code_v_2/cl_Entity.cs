@@ -12,11 +12,13 @@ namespace massive_code_v_2
         public String Login { get; set; }
         public String Password { get; set; }
         public Guid GUID { get; set; }
-        public String Mail { get; set; }
+        public String Email { get; set; }
         public String RegDate { get; set; }
         public String Permission { get; set; }
         public String Attribute { get; set; }
         public Boolean Blocked { get; set; }
+        public String Name { get; set; }
+        public String Surname { get; set; }
 
     }
     public class cl_UserContext : DbContext

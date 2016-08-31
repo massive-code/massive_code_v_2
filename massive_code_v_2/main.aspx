@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <iframe src="https://www.youtube.com/embed/vbGFRzzs4Hw" style="height: 180px; width: 250px" id="I1" name="I1"></iframe>
+                <iframe runat="server" src="https://www.youtube.com/embed/vbGFRzzs4Hw" style="height: 180px; width: 250px" id="I1" name="I1"></iframe>
                 </td>
             <td class="auto-style3">
                 <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Rod" Font-Size="13pt" ForeColor="#0066FF" OnClick="LinkButton3_Click">Разработка бесполезного архиватора</asp:LinkButton>

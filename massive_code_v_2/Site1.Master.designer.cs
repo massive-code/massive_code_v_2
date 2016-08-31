@@ -58,6 +58,15 @@ namespace massive_code_v_2 {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
+        /// LinkButton3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        
+        /// <summary>
         /// ScriptManager1 элемент управления.
         /// </summary>
         /// <remarks>
@@ -218,5 +227,14 @@ namespace massive_code_v_2 {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_SignUp;
+        
+        /// <summary>
+        /// cb_RememberSignIn элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox cb_RememberSignIn;
     }
 }

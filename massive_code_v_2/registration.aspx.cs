@@ -19,12 +19,12 @@ namespace massive_code_v_2
             cl_UserContext UserContext = new cl_UserContext("users_base");
             cl_User User = new cl_User();
             User.Login = TextBox_Login.Text;
-            User.Mail = TextBox_Email.Text;
+            User.Email = TextBox_Email.Text;
 
             Boolean lb_Find = false;
             foreach (cl_User temp in UserContext.db_Users)
             {
-                if (temp.Login == User.Login || temp.Mail == User.Mail)
+                if (temp.Login == User.Login || temp.Email == User.Email)
                 {
                     lb_Find = true;
                     Label_SignUp.Text = "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЛОГИНОМ ИЛИ EMAIL УЖЕ СУЩЕСТВУЕТ";
