@@ -22,23 +22,22 @@
         }
         .auto-style6 {
             width: 312px;
-            height: 53px;
+            height: 32px;
         }
         .auto-style7 {
             width: 454px;
-            height: 53px;
+            height: 32px;
         }
         .auto-style10 {
             width: 16px;
-            height: 53px;
+            height: 32px;
         }
         .auto-style16 {}
         .auto-style17 {
-            height: 53px;
+            height: 32px;
             text-align: center;
         }
-        .auto-style18 {}
-
+        
         .auto-style25 {
         height: 28px;
     }
@@ -48,7 +47,7 @@
         }
 
         .auto-style26 {
-            height: 53px;
+            height: 32px;
             text-align: center;
             width: 458px;
         }
@@ -68,23 +67,27 @@
                 <td class="auto-style10">
                         </td>
                 <td class="auto-style6">
-                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Agency FB" Font-Size="30pt" Font-Underline="False" ForeColor="#CC0000" PostBackUrl="~/default.aspx">MASSIVE  </asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Agency FB" Font-Overline="False" Font-Size="30pt" Font-Underline="False" ForeColor="Black" PostBackUrl="~/default.aspx">CODE</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="30pt" Font-Underline="False" ForeColor="#CC0000" PostBackUrl="~/default.aspx">MASSIVE  </asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Agency FB Cyrillic" Font-Overline="False" Font-Size="30pt" Font-Underline="False" ForeColor="Black" PostBackUrl="~/default.aspx">CODE</asp:LinkButton>
                 &nbsp; <asp:Image ID="Image1" runat="server" Height="35px" ImageUrl="~/pictures/massive_code.png" Width="35px" Visible="False" />
                         <br />
-                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Agency FB Cyrillic" Font-Overline="False" Font-Size="15pt" Font-Underline="False" ForeColor="#009933" Font-Bold="True">САЙТ В РАЗРАБОТКЕ</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Agency FB Cyrillic" Font-Overline="False" Font-Size="15pt" Font-Underline="False" ForeColor="#006699" Font-Bold="True">САЙТ В РАЗРАБОТКЕ</asp:LinkButton>
                         </td>
                 <td class="auto-style7">
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
                 </td>
+                <td class="auto-style7">
+                    &nbsp;</td>
                 <td style="text-align: right" class="auto-style26">
                         <asp:LinkButton ID="LinkButton_SignIn" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#990000" OnClick="LinkButton_SignIn_Click">АВТОРИЗАЦИЯ</asp:LinkButton>
                                 <asp:Label ID="Label1" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Text="Label"></asp:Label>
                                 <asp:LinkButton ID="LinkButton_User" runat="server" CssClass="UserLink" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Font-Underline="False" ForeColor="Maroon" OnClick="LinkButton_User_Click">LinkButton</asp:LinkButton>
+                            <br />
+                        <asp:LinkButton ID="LinkButton_SignOut" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#990000" OnClick="LinkButton_SignOut_Click">ВЫЙТИ</asp:LinkButton>
                             </td>
                 <td style="text-align: right" class="auto-style17">
-                        &nbsp;</td>
+                        </td>
             </tr>
             
         </table>
@@ -92,9 +95,7 @@
                             <Items>
                                 <asp:MenuItem Text="ГЛАВНАЯ" Value="ГЛАВНАЯ" NavigateUrl="~/default.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="РЕГИСТРАЦИЯ" Value="Создать элемент" NavigateUrl="~/registration.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="УРОКИ" Value="Создать элемент"></asp:MenuItem>
-                                <asp:MenuItem Text="КОНТАКТЫ" Value="КОНТАКТЫ"></asp:MenuItem>
-                                <asp:MenuItem Text="РАЗРАБОТКА" Value="РАЗРАБОТКА"></asp:MenuItem>
+                                <asp:MenuItem Text="КОНТАКТЫ" Value="КОНТАКТЫ" NavigateUrl="~/contacts.aspx"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle BackColor="White" BorderColor="White" BorderStyle="Solid" ForeColor="#990000" BorderWidth="1px" Font-Size="12pt" />
                             <StaticMenuItemStyle HorizontalPadding="20px" />
@@ -102,91 +103,21 @@
                             <StaticSelectedStyle BorderStyle="None" />
                         </asp:Menu>
         <asp:Panel ID="Panel1" runat="server" BackColor="#333333">
-            <dx:ASPxImageSlider ID="ASPxImageSlider2" runat="server" Height="300px" ImageSourceFolder="~/pictures/master/" Width="100%" ShowNavigationBar="False" CssClass="auto-style16">
+            <dx:ASPxImageSlider ID="ASPxImageSlider2" runat="server" Height="300px" ImageSourceFolder="~/pictures/master/" Width="100%" CssClass="auto-style16">
                 <SettingsImageArea AnimationType="Slide" ImageSizeMode="FillAndCrop" />
                 <SettingsNavigationBar Mode="Dots" />
-                <SettingsSlideShow AutoPlay="True" Interval="4500" PausePlayingWhenMouseOver="True" />
+                <SettingsSlideShow Interval="6000" PausePlayingWhenMouseOver="True" />
                 <SettingsAutoGeneratedImages ImageCacheFolder="~\Thumb\" />
             </dx:ASPxImageSlider>
         </asp:Panel>
+
+
     <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">   
+         
         </asp:ContentPlaceHolder>
     </div>
-        <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" CssClass="auto-style18" Height="270px" PopupElementID="LinkButton_SignIn" ShowHeader="False" Width="368px" Modal="True" ShowShadow="False" ShowSizeGrip="False">
-            <ContentStyle>
-                <Border BorderStyle="None" />
-            </ContentStyle>
-            <FooterStyle>
-            <Border BorderStyle="None" />
-            </FooterStyle>
-            <LoadingDivStyle>
-                <Border BorderStyle="None" />
-            </LoadingDivStyle>
-            <LoadingPanelStyle>
-                <Border BorderStyle="None" />
-            </LoadingPanelStyle>
-            <ContentCollection>
-<dx:PopupControlContentControl runat="server">
-    <table id="table_SignIn" runat="server" style="width:100%; height: 181px;">
-        <tr runat="server">
-            <td runat="server" class="auto-style25" style="text-align: center; background-color: #333333;">
-                <asp:Label ID="Label6" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="White" style="text-align: center" Text="АВТОРИЗАЦИЯ"></asp:Label>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" style="text-align: center">
-                <asp:Label ID="Label3" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" style="text-align: center" Text="ЛОГИН"></asp:Label>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" style="text-align: center">
-                <asp:TextBox ID="TextBox_Login" runat="server" BackColor="#F0F0F0" BorderColor="#333333" BorderStyle="Solid" BorderWidth="1px" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Height="30px" Width="200px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" style="text-align: center">
-                <asp:Label ID="Label4" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Text="ПАРОЛЬ"></asp:Label>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" class="auto-style27">
-                <asp:TextBox ID="TextBox_Pass" runat="server" BackColor="#F0F0F0" BorderColor="#333333" BorderStyle="Solid" BorderWidth="1px" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Height="30px" TextMode="Password" Width="200px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" class="auto-style19">
-                <asp:Label ID="Label_SignIn" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#CC0000"></asp:Label>
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server" style="text-align: center">
-                <asp:Button ID="Button_SignIn" runat="server" BackColor="#990000" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="White" OnClick="Button_SignIn_Click" Text="ВОЙТИ" />
-                &nbsp;<asp:Button ID="Button_SignUp" runat="server" BorderColor="#003366" BorderStyle="Solid" BorderWidth="1px" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#003366" OnClick="Button_SignUp_Click" Text="РЕГИСТРАЦИЯ" />
-            </td>
-        </tr>
-        <tr runat="server">
-            <td runat="server">
-                <table style="width:100%;">
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td class="auto-style28">
-                            <dx:ASPxCheckBox ID="cb_RememberSignIn" runat="server" CheckState="Unchecked" Font-Names="Agency FB Cyrillic" Font-Size="12pt" ForeColor="#006699" Text="ЗАПОМНИТЬ">
-                            </dx:ASPxCheckBox>
-                        </td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-                </dx:PopupControlContentControl>
-</ContentCollection>
-            <Border BorderStyle="None" BorderWidth="2px" />
-            <DisabledStyle>
-                <Border BorderStyle="None" />
-            </DisabledStyle>
-        </dx:ASPxPopupControl>
+       
     </form>
 </body>
 </html>

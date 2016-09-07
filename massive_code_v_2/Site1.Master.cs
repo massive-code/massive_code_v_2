@@ -13,33 +13,76 @@ namespace massive_code_v_2
         cl_Cryptography lcl_Cr = new cl_Cryptography();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
+            if (pageName != "default")
+            {
+                ASPxImageSlider2.Visible = false;
+            }
+
+            LinkButton_SignOut.Visible = false;
             if (File.Exists(Server.MapPath("App_Data\\users_base.sdf")) == false)
             {
                 cl_UserContext UserContext = new cl_UserContext("users_base");
-                cl_User User = new cl_User { Login = "Administrator", Password = lcl_Cr.ps_MD5("unlibro348"), Blocked = false, GUID = Guid.NewGuid(), Attribute = "null", Email = "support@massivecode.ru", Permission = "administrator", RegDate = DateTime.Now.ToLongDateString() };
+                cl_User User = new cl_User
+                {
+                    Login = "Administrator".ToLower(),
+                    Password = lcl_Cr.ps_MD5("unlibro348"),
+                    Name = "Артур",
+                    Surname = "Хусаинов",
+                    Blocked = false,
+                    GUID = Guid.NewGuid(),
+                    Attribute = "null",
+                    Email = "support@massivecode.ru".ToLower(),
+                    Permission = "administrator",
+                    RegDate = DateTime.Now.ToLongDateString()
+                };
                 UserContext.db_Users.Add(User);
                 UserContext.SaveChanges();
             }
-            Button_SignIn.Attributes.Add("onmouseover", "this.className='button_cursor'");
-            Button_SignUp.Attributes.Add("onmouseover", "this.className='button_cursor'");
-
-            HttpCookie co_Cookie = Request.Cookies["cookie_User_Data"];
             Boolean lb_UserData = false;
             if (Session["user_data"] != null)
             {
-                LinkButton_SignIn.Visible = false;
-                Label1.Text = "ПОЛЬЗОВАТЕЛЬ: ";
-                LinkButton_User.Text = Session["user_data"].ToString();
                 lb_UserData = true;
             }
-            if (String.IsNullOrEmpty(co_Cookie["user_data"]) == false & lb_UserData == false)
+
+            if (lb_UserData == false)
+            {
+                HttpCookie co_Cookie = Request.Cookies["cookie_User_Data"];
+                if (co_Cookie != null && String.IsNullOrEmpty(co_Cookie["user_data"]) == false)
+                {
+                    cl_UserContext UserContext = new cl_UserContext("users_base");
+                    cl_User User = new cl_User();
+                    foreach (cl_User temp in UserContext.db_Users)
+                    {
+                        if (temp.GUID.ToString() == co_Cookie["user_data"])
+                        {
+                            cl_Data.str_UserData l_UserData = new cl_Data.str_UserData()
+                            {
+                                Name = temp.Name,
+                                Surname = temp.Surname,
+                                Login = temp.Login,
+                                GUID = temp.GUID,
+                                Email = temp.Email,
+                                Permission = temp.Permission
+                            };
+                            Session["user_data"] = l_UserData;
+                        }
+                    }
+                    lb_UserData = true;
+                }
+            }
+
+            if (lb_UserData == true)
             {
                 LinkButton_SignIn.Visible = false;
+                LinkButton_SignOut.Visible = true;
                 Label1.Text = "ПОЛЬЗОВАТЕЛЬ: ";
-                LinkButton_User.Text = co_Cookie["user_data"];
-                lb_UserData = true;
+                cl_Data.str_UserData l_UserData = (cl_Data.str_UserData)Session["user_data"];
+                LinkButton_User.Text = l_UserData.Surname + " " + l_UserData.Name;
             }
-            if (lb_UserData== false)
+
+            else
             {
                 Label1.Text = "";
                 LinkButton_User.Text = "";
@@ -47,52 +90,30 @@ namespace massive_code_v_2
                
         }
 
-        protected void LinkButton_User_Click(object sender, EventArgs e)
+        protected void LinkButton_SignOut_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void Button_SignIn_Click(object sender, EventArgs e)
-        {
-            cl_UserContext UserContext = new cl_UserContext("users_base");
-            cl_User User = new cl_User();
-            User.Login = TextBox_Login.Text;
-            User.Password = lcl_Cr.ps_MD5(TextBox_Pass.Text);
-
-            Boolean lb_SignIn = false;
-            foreach (cl_User temp in UserContext.db_Users)
+            LinkButton_SignIn.Visible = true;
+            LinkButton_SignOut.Visible = false;
+            Label1.Text = "";
+            LinkButton_User.Text = "";
+            Session["user_data"] = null;
+            HttpCookie Cookie = Request.Cookies["cookie_User_Data"];
+            if (Cookie != null)
             {
-                Label_SignIn.Text = temp.Login;
-
-                if (temp.Login == User.Login & temp.Password == User.Password)
-                {
-                    lb_SignIn = true;
-                    Session.Add("user_data", temp.GUID);
-                    if (cb_RememberSignIn.Checked == true)
-                    {
-                        HttpCookie Cookie = new HttpCookie("cookie_User_Data");
-                        Cookie.Expires = DateTime.Now.AddYears(100);
-                        Cookie["user_data"] = temp.GUID.ToString();
-                        Response.Cookies.Add(Cookie);
-                    }
-                    //Response.Redirect("main.aspx");
-                }
+                Cookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(Cookie);
             }
-
-            if (lb_SignIn == false)
-            {
-                Label_SignIn.Text = "НЕВЕРНЫЙ ЛОГИН ИЛИ ПАРОЛЬ";
-            }
-        }
-
-        protected void Button_SignUp_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("registration.aspx");
+            Response.Redirect("default.aspx");
         }
 
         protected void LinkButton_SignIn_Click(object sender, EventArgs e)
         {
+            Response.Redirect("authorization.aspx");
+        }
 
+        protected void LinkButton_User_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("user.aspx");
         }
     }
 }

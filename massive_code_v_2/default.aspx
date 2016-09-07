@@ -23,41 +23,69 @@
         height: 28px;
     }
 
-        .auto-style31 {
-            width: 100%;
-            height: 268px;
-        }
-        
         .auto-style37 {
             height: 42px;
             text-align: center;
             background-color: #E6E6E6;
         }
-        .auto-style41 {
-            height: 89px;
-            background-color: #781010;
-        }
-
+        
         .auto-style42 {
             width: 100%;
             height: 53px;
         }
 
+        .новыйСтиль1 {
+            background-color: #006699;
+        }
+        .auto-style43 {
+            height: 22px;
+        }
         .auto-style44 {
-        height: 100px;
-        width: 100px;
-    }
+            height: 8px;
+        }
 
         </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="Panel1" runat="server" style="text-align: center">
+                <br />
+                <br />
+                <br />
                 <asp:Label ID="Label7" runat="server" Font-Bold="False" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="#990000" Text="ОЗНАКОМЬТЕСЬ С ВИДЕО УРОКАМИ ПО РАЗРАБОТКЕ ПРОСТЫХ КОМПОНЕТОВ НА ЯЗЫКЕ С#"></asp:Label>
+                <br />
+                <br />
     </asp:Panel>
-
-        <asp:Panel ID="Panel2" runat="server">
+    <table style="width: 100%; height: 326px;" class="новыйСтиль1">
+        <tr>
+            <td class="auto-style43"></td>
+            <td class="auto-style43"></td>
+            <td class="auto-style43"></td>
+        </tr>
+        <tr>
+            <td class="dxeCaptionHACSys">
+                <iframe src="https://www.youtube.com/embed/vbGFRzzs4Hw" style="height: 235px; width: 400px"></iframe>
+                </td>
+            <td class="dxeCaptionHACSys">
+                <iframe src="https://www.youtube.com/embed/vzmhqh2ziVU" style="height: 235px; width: 400px" ></iframe>
+                </td>
+            <td class="dxeCaptionHACSys">
+                <iframe src="https://www.youtube.com/embed/x9ffobpX65U" style="height: 235px; width: 400px"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style44"></td>
+            <td class="auto-style44"></td>
+            <td class="auto-style44"></td>
+        </tr>
+    </table>
+        <asp:Panel ID="Panel2" runat="server" style="text-align: center">
+                <br />
+                <br />
+                <br />
                 <asp:Label ID="Label8" runat="server" Font-Bold="False" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="#333333" Text="НАЧНИТЕ РАЗРАБАТЫВАТЬ СВОИ СОБСТВЕННЫЕ ПРОЕКТЫ УЖЕ СЕЙЧАС "></asp:Label>
+                <br />
+                <br />
     </asp:Panel>
     <table style="width: 100%; border-collapse:collapse; background-color: #333333;">
             <tr>
