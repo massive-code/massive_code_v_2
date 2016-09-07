@@ -20,7 +20,12 @@ namespace massive_code_v_2
                 ASPxImageSlider2.Visible = false;
             }
 
-            LinkButton_SignOut.Visible = false;
+            if (pageName == "massivecode")
+            {
+                ASPxImageSlider2.Visible = true;
+            }
+
+                LinkButton_SignOut.Visible = false;
             if (File.Exists(Server.MapPath("App_Data\\users_base.sdf")) == false)
             {
                 cl_UserContext UserContext = new cl_UserContext("users_base");
