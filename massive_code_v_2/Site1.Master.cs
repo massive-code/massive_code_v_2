@@ -15,14 +15,9 @@ namespace massive_code_v_2
         {
 
             string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
-            if (pageName != "default")
+            if (pageName.ToLower() != "default")
             {
                 ASPxImageSlider2.Visible = false;
-            }
-
-            if (pageName == "massivecode")
-            {
-                ASPxImageSlider2.Visible = true;
             }
 
                 LinkButton_SignOut.Visible = false;
