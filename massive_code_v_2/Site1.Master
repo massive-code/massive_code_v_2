@@ -38,25 +38,10 @@
             text-align: center;
         }
         
-        .auto-style25 {
-        height: 28px;
-    }
-
-        .auto-style19 {
-            text-align: center;
-        }
-
         .auto-style26 {
             height: 32px;
             text-align: center;
             width: 458px;
-        }
-        .auto-style27 {
-            height: 40px;
-            text-align: center;
-        }
-        .auto-style28 {
-            width: 74px;
         }
         </style>
 </head>
@@ -67,11 +52,11 @@
                 <td class="auto-style10">
                         </td>
                 <td class="auto-style6">
-                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="30pt" Font-Underline="False" ForeColor="#CC0000" PostBackUrl="~/default.aspx">MASSIVE  </asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Agency FB Cyrillic" Font-Overline="False" Font-Size="30pt" Font-Underline="False" ForeColor="Black" PostBackUrl="~/default.aspx">CODE</asp:LinkButton>
-                &nbsp; <asp:Image ID="Image1" runat="server" Height="35px" ImageUrl="~/pictures/massive_code.png" Width="35px" Visible="False" />
+                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Times New Roman" Font-Size="25pt" Font-Underline="False" ForeColor="#CC0000" PostBackUrl="~/default.aspx">MASSIVE  </asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Times New Roman" Font-Overline="False" Font-Size="25pt" Font-Underline="False" ForeColor="Black" PostBackUrl="~/default.aspx">CODE</asp:LinkButton>
+                &nbsp; 
                         <br />
-                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Agency FB Cyrillic" Font-Overline="False" Font-Size="15pt" Font-Underline="False" ForeColor="#006699" Font-Bold="True">САЙТ В РАЗРАБОТКЕ</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Times New Roman" Font-Overline="False" Font-Size="12pt" Font-Underline="False" ForeColor="#006699" Font-Bold="True">САЙТ В РАЗРАБОТКЕ</asp:LinkButton>
                         </td>
                 <td class="auto-style7">
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -80,18 +65,18 @@
                 <td class="auto-style7">
                     &nbsp;</td>
                 <td style="text-align: right" class="auto-style26">
-                        <asp:LinkButton ID="LinkButton_SignIn" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#990000" OnClick="LinkButton_SignIn_Click">АВТОРИЗАЦИЯ</asp:LinkButton>
-                                <asp:Label ID="Label1" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Text="Label"></asp:Label>
-                                <asp:LinkButton ID="LinkButton_User" runat="server" CssClass="UserLink" Font-Names="Agency FB Cyrillic" Font-Size="15pt" Font-Underline="False" ForeColor="Maroon" OnClick="LinkButton_User_Click">LinkButton</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton_SignIn" runat="server" Font-Names="Times New Roman" Font-Size="12pt" ForeColor="#990000" OnClick="LinkButton_SignIn_Click">АВТОРИЗАЦИЯ</asp:LinkButton>
+                                <asp:Label ID="Label1" runat="server" Font-Names="Times New Roman" Font-Size="12pt" Text="Label"></asp:Label>
+                                <asp:LinkButton ID="LinkButton_User" runat="server" CssClass="UserLink" Font-Names="Times New Roman" Font-Size="12pt" Font-Underline="False" ForeColor="Maroon" OnClick="LinkButton_User_Click">LinkButton</asp:LinkButton>
                             <br />
-                        <asp:LinkButton ID="LinkButton_SignOut" runat="server" Font-Names="Agency FB Cyrillic" Font-Size="15pt" ForeColor="#990000" OnClick="LinkButton_SignOut_Click">ВЫЙТИ</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton_SignOut" runat="server" Font-Names="Times New Roman" Font-Size="12pt" ForeColor="#990000" OnClick="LinkButton_SignOut_Click">ВЫЙТИ</asp:LinkButton>
                             </td>
                 <td style="text-align: right" class="auto-style17">
                         </td>
             </tr>
             
         </table>
-        <asp:Menu ID="Menu1" runat="server" BorderStyle="None" Font-Names="Andalus" Font-Size="13pt" ForeColor="White" Orientation="Horizontal" Width="100%" BackColor="#990000">
+        <asp:Menu ID="Menu1" runat="server" BorderStyle="None" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="White" Orientation="Horizontal" Width="100%" BackColor="#990000">
                             <Items>
                                 <asp:MenuItem Text="ГЛАВНАЯ" Value="ГЛАВНАЯ" NavigateUrl="~/default.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="РЕГИСТРАЦИЯ" Value="Создать элемент" NavigateUrl="~/registration.aspx"></asp:MenuItem>

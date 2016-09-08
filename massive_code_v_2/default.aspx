@@ -52,7 +52,7 @@
                 <br />
                 <br />
                 <br />
-                <asp:Label ID="Label7" runat="server" Font-Bold="False" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="#990000" Text="ОЗНАКОМЬТЕСЬ С ВИДЕО УРОКАМИ ПО РАЗРАБОТКЕ ПРОСТЫХ КОМПОНЕТОВ НА ЯЗЫКЕ С#"></asp:Label>
+                <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="#990000" Text="ОЗНАКОМЬТЕСЬ С ВИДЕО УРОКАМИ ПО РАЗРАБОТКЕ ПРОСТЫХ КОМПОНЕТОВ НА ЯЗЫКЕ С#"></asp:Label>
                 <br />
                 <br />
     </asp:Panel>
@@ -83,7 +83,7 @@
                 <br />
                 <br />
                 <br />
-                <asp:Label ID="Label8" runat="server" Font-Bold="False" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="#333333" Text="НАЧНИТЕ РАЗРАБАТЫВАТЬ СВОИ СОБСТВЕННЫЕ ПРОЕКТЫ УЖЕ СЕЙЧАС "></asp:Label>
+                <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="#333333" Text="НАЧНИТЕ РАЗРАБАТЫВАТЬ СВОИ СОБСТВЕННЫЕ ПРОЕКТЫ УЖЕ СЕЙЧАС "></asp:Label>
                 <br />
                 <br />
     </asp:Panel>
@@ -106,14 +106,14 @@
             </tr>
             <tr>
                 <td class="auto-style23">
-                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="White" Text="РАЗРАБОТКА НА ОДНОМ ИЗ ЛУЧШИХ ЯЗЫКОВ ПРОГРАММИРОВАНИЯ" style="font-size: 15pt"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="White" Text="РАЗРАБОТКА НА ОДНОМ ИЗ ЛУЧШИХ ЯЗЫКОВ ПРОГРАММИРОВАНИЯ" style="font-size: 15pt"></asp:Label>
                 </td>
                 <td class="auto-style24">
-                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="White" Text="C# ПОЗВОЛЯЕТ СОЗДАВАТЬ ПРИЛОЖЕНИЯ ЛЮБОЙ СЛОЖНОСТИ" style="font-size: 15pt"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Font-Bold="False" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="White" Text="C# ПОЗВОЛЯЕТ СОЗДАВАТЬ ПРИЛОЖЕНИЯ ЛЮБОЙ СЛОЖНОСТИ" style="font-size: 15pt"></asp:Label>
                     <br />
                 </td>
                 <td class="dx-ac">
-                    <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Names="Agency FB Cyrillic" Font-Size="20pt" ForeColor="White" Text="ПРОЙДИТЕ ПРОСТУЮ РЕГИСТРАЦИЮ И ПОЛУЧИТЕ ИСХОДНЫЕ КОДЫ АБСОЛЮТНО БЕСПЛАТНО" style="font-size: 15pt"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Font-Names="Times New Roman" Font-Size="15pt" ForeColor="White" Text="ПРОЙДИТЕ ПРОСТУЮ РЕГИСТРАЦИЮ И ПОЛУЧИТЕ ИСХОДНЫЕ КОДЫ АБСОЛЮТНО БЕСПЛАТНО" style="font-size: 15pt"></asp:Label>
                     </td>
             </tr>
             <tr>
